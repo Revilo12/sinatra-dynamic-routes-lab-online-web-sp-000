@@ -16,7 +16,7 @@ class App < Sinatra::Base
     @number.to_i.times.collect {@phrase}.join(' ')
   end
   get '/say/:word1/:word2/:word3/:word4/:word5' do
-    params.values.join(' ')
+    "#{params.values.join(' ')}."
   end
   get '/:operation/:number1/:number2' do
     @operation = params[:operation]
