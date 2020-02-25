@@ -6,14 +6,17 @@ class App < Sinatra::Base
     @user_name = params[:name]
     @user_name.reverse
   end
-  get 'square/:number' do
+  get '/square/:number' do
     @number = params[:number].to_i
     @number.square.to_s
   end
-  get 'say/:number/:phrase' do
+  get '/say/:number/:phrase' do
     @number = params[:number]
     @phrase = params[:phrase]
     @number.to_i.times.collect {@phrase}.join(' ')
+  end
+  get '/say/:word1/:word2/:word3/:word4/:word5' do
+    params.join(' ')
   end
   get '/:operation/:number1/:number2' do
     @operation = params[:operation]
